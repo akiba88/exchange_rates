@@ -1,0 +1,17 @@
+#################### Layout ##########################
+
+Layout/AccessModifierIndentation:
+  EnforcedStyle: outdent
+
+#################### Style ###########################
+
+Style/ClassAndModuleChildren:
+  EnforcedStyle: compact
+
+# Style/FrozenStringLiteralComment:
+#   EnforcedStyle: never
+
+#################### Metrics #########################
+
+Metrics/LineLength:
+  Max: 120
