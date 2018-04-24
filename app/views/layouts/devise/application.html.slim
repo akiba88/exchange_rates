@@ -1,0 +1,11 @@
+doctype html
+html lang='en'
+  head
+    = render 'shared/head'
+
+  body
+    .container
+      .row
+        = bootstrap_flash
+
+        = yield

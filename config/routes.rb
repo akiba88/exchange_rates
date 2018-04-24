@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  devise_for :users, only: :sessions, controllers: { sessions: 'admin/sessions' }
 
   root 'home#index'
+
+  namespace :admin do
+    root 'dashboard#index'
+  end
 end

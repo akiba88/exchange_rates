@@ -1,0 +1,13 @@
+doctype html
+html lang='en'
+  head
+    = render 'shared/head'
+
+  body
+    = render 'shared/admin/navbar'
+
+    .container
+      .row
+        = bootstrap_flash
+
+        = yield

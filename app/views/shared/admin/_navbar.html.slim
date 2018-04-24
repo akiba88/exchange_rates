@@ -1,0 +1,5 @@
+.navbar.navbar-default.navbar-static-top
+  .container
+    = link_to 'ExchangeRates', root_path, class: 'navbar-brand'
+
+    = link_to 'LogOut', destroy_user_session_path, method: :delete, class: 'navbar-brand pull-right'
