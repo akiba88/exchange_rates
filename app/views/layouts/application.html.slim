@@ -1,0 +1,16 @@
+doctype html
+html lang='en'
+  head
+    = render 'shared/head'
+
+  body
+    = render 'shared/navbar'
+
+    .container
+      .row
+        = bootstrap_flash
+
+        = yield
+
+      footer
+        p &copy; Company 2018
