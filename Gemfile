@@ -11,6 +11,8 @@ gem 'coffee-rails', '~> 4.2'
 
 gem 'devise'
 
+gem 'http'
+
 gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'
 
@@ -18,6 +20,8 @@ gem 'puma', '~> 3.7'
 gem 'pundit'
 
 gem 'rails', '~> 5.1.4'
+gem 'reform'
+gem 'reform-rails'
 
 gem 'sass-rails', '~> 5.0'
 gem 'slim'
@@ -27,6 +31,8 @@ gem 'turbolinks', '~> 5'
 gem 'twitter-bootstrap-rails'
 
 gem 'uglifier', '>= 1.3.0'
+
+gem 'whenever', require: false
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

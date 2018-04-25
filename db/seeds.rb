@@ -5,3 +5,7 @@ unless User.any?
     password_confirmation: '111111111'
   )
 end
+
+unless Currency.any?
+  Currencies::UpdateList.new.run
+end

@@ -20,4 +20,6 @@
 /node_modules
 /yarn-error.log
 
+/config/cbr_api.yml
+
 .byebug_history
