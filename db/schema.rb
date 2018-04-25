@@ -10,7 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180424195106) do
+ActiveRecord::Schema.define(version: 20180425075410) do
+
+  create_table "currencies", force: :cascade do |t|
+    t.string "parent_code", null: false
+    t.string "num_code"
+    t.string "char_code"
+    t.string "name"
+    t.string "eng_name"
+    t.decimal "value", precision: 10, scale: 4
+    t.decimal "forced_value", precision: 10, scale: 4
+    t.datetime "forced_expiriation_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["parent_code"], name: "index_currencies_on_parent_code"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
