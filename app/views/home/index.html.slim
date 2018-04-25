@@ -1,13 +1,6 @@
 .col-lg-4
 
 .col-lg-4
-  ul.list-group
-    li.list-group-item.d-flex.justify-content-between.align-items-center
-      Cras Доллар США $
-      span.pull-right -
-
-    li.list-group-item.d-flex.justify-content-between.align-items-center
-      Cras Евро €
-      span.pull-right -
+  = render partial: 'home/shared/list', locals: { collection: currencies_collection }
 
 .col-lg-4
