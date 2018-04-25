@@ -7,6 +7,8 @@ end
 
 # a b c d e f g h i j k l m n o p q r s t u v w x y z
 
+gem 'bootstrap3-datetimepicker-rails', '~> 4.14.30'
+
 gem 'coffee-rails', '~> 4.2'
 
 gem 'devise'
@@ -15,6 +17,8 @@ gem 'http'
 
 gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'
+
+gem 'momentjs-rails', '>= 2.9.0'
 
 gem 'puma', '~> 3.7'
 gem 'pundit'

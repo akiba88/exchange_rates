@@ -5,5 +5,13 @@ Rails.application.routes.draw do
 
   namespace :admin do
     root 'dashboard#index'
+
+    namespace :currencies, only: [] do
+      resource :forced, only: [:update], controller: 'forced'
+    end
+  end
+
+  namespace :api do
+    resources :currencies, only: [:index]
   end
 end
