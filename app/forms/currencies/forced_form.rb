@@ -28,6 +28,6 @@ protected
   end
 
   def format_time
-    '%m/%d/%Y %I:%M %p'
+    BaseConstants.format_datetimepicker
   end
 end

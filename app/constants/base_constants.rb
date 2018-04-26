@@ -4,5 +4,9 @@ class BaseConstants
     def available_currencies_codes
       %w[R01235]
     end
+
+    def format_datetimepicker
+      '%m/%d/%Y %I:%M %p'
+    end
   end
 end

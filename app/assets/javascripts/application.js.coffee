@@ -9,4 +9,5 @@
 
 $ ->
 
-  $('#datetimepicker4').datetimepicker()
+  $('#datetimepicker').datetimepicker()
+

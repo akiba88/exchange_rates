@@ -1,15 +1,15 @@
 = form_for object, as: :currency, url: url do |f|
   .form-group
     = f.label :currency_id
-    = f.select :currency_id, currencies_values_collection, {}, { class: 'form-control' }
+    = f.select :currency_id, currencies_values_collection, {}, { class: 'form-control', id: 'changeCurrency' }
 
   .form-group
     = f.label :forced_value
-    = f.text_field :forced_value, class: 'form-control'
+    = f.text_field :forced_value, class: 'form-control', data: { id: 'forcedValue' }
 
   .form-group
     = f.label :forced_expiriation_at
-    = f.text_field :forced_expiriation_at, class: 'form-control', id: 'datetimepicker4'
+    = f.text_field :forced_expiriation_at, class: 'form-control', id: 'datetimepicker', data: { id: 'forcedTime' }
 
   .actions
     = f.button 'Forced', type: :submit, class: 'btn btn-primary'
