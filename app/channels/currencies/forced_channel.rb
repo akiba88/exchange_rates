@@ -1,10 +1,10 @@
 class Currencies::ForcedChannel < ApplicationCable::Channel
   def subscribed
-    stream_from current_user
+    stream_from params['channel']
   end
 
   def speak(data)
-    ActionCable.server.broadcast current_user, currency_options(data['currency_id'])
+    ActionCable.server.broadcast params['channel'], currency_options(data['currency_id'])
   end
 
 protected
