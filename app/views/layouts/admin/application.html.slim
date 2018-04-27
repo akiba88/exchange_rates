@@ -1,7 +1,7 @@
 doctype html
 html lang='en'
   head
-    = render 'shared/head'
+    = render 'shared/admin/head'
 
   body
     = render 'shared/admin/navbar'
@@ -11,3 +11,5 @@ html lang='en'
         = bootstrap_flash
 
         = yield
+
+    = content_for :assets

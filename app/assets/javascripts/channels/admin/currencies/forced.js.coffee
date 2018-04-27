@@ -1,4 +1,4 @@
-App.room = App.cable.subscriptions.create 'Currencies::ForcedChannel',
+App.room = App.cable.subscriptions.create 'Admin::Currencies::ForcedChannel',
   connected: ->
     # Called when the subscription is ready for use on the server
 

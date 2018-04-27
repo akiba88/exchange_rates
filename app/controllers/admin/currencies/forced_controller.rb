@@ -3,6 +3,8 @@ class Admin::Currencies::ForcedController < Admin::BaseController
 
   def update
     if forced_currency_form.validate(params[:currency]) && forced_currency_form.save
+      ActionCable.server.broadcast 'Main::CurrenciesChannel', sending_data
+
       redirect_to admin_root_url
     else
       Rails.logger.error forced_currency_form.errors.messages
@@ -19,5 +21,23 @@ protected
 
   def resource_currency
     @resource_currency ||= Currency.find(params[:currency][:currency_id])
+  end
+
+  def currency_options
+    @currency_options ||= CurrenciesRepresenter.element(forced_currency_form.model)
+  end
+
+  def sending_data
+    {
+      code: currency_options[:code],
+      html: render_to_string(
+        partial: 'home/shared/element',
+        locals: {
+          name: currency_options[:name],
+          value: currency_options[:current_value]
+        },
+        laylout: false
+      )
+    }
   end
 end

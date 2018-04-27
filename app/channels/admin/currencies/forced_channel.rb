@@ -1,4 +1,4 @@
-class Currencies::ForcedChannel < ApplicationCable::Channel
+class Admin::Currencies::ForcedChannel < ApplicationCable::Channel
   def subscribed
     stream_from params['channel']
   end
