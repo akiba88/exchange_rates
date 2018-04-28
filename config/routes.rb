@@ -1,4 +1,9 @@
+
+require 'sidekiq/web'
+
 Rails.application.routes.draw do
+  mount Sidekiq::Web => '/sidekiq'
+
   devise_for :users, only: :sessions, controllers: { sessions: 'admin/sessions' }
 
   root 'home#index'
@@ -11,7 +16,7 @@ Rails.application.routes.draw do
     end
   end
 
-  namespace :api do
-    resources :currencies, only: [:index]
-  end
+  # namespace :api do
+  #   resources :currencies, only: [:index, :show]
+  # end
 end

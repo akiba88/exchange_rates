@@ -28,6 +28,8 @@ gem 'reform'
 gem 'reform-rails'
 
 gem 'sass-rails', '~> 5.0'
+gem 'sidekiq', '< 6'
+gem 'sinatra', require: nil
 gem 'slim'
 gem 'sqlite3'
 
