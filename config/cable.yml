@@ -1,5 +1,8 @@
 development:
-  adapter: async
+  # adapter: async
+  adapter: redis
+  url: redis://localhost:6379/1
+  channel_prefix: exchange_rates_development
 
 test:
   adapter: async
