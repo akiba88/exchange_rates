@@ -1,4 +1,4 @@
-class CbrApi::Currency::ListGetter
+class CbrApi::GetterCurrenciesValues
   class << self
     def run
       CbrApi.get(path)
@@ -7,7 +7,7 @@ class CbrApi::Currency::ListGetter
     end
 
     def path
-      '/scripts/XML_val.asp'
+      '/scripts/XML_daily.asp'
     end
   end
 end

@@ -9,14 +9,14 @@ class Currencies::UpdateValues
       currency.char_code = attributes['CharCode']
       currency.value = attributes['Value'].to_s.tr(',', '.')
 
-      currency.save
+      SendDataToCurrenciesChannel.new(currency).run if currency.save
     end
   end
 
 protected
 
   def response
-    CbrApi::Currency::ValuesGetter.run
+    CbrApi::GetterCurrenciesValues.run
   end
 
   def data

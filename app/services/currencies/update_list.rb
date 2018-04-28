@@ -13,7 +13,7 @@ class Currencies::UpdateList
 protected
 
   def response
-    CbrApi::Currency::ListGetter.run
+    CbrApi::GetterCurrenciesList.run
   end
 
   def data
