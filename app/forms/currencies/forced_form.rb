@@ -10,7 +10,9 @@ class Currencies::ForcedForm < Reform::Form
   validates :forced_expiriation_at, presence: true
 
   def forced_expiriation_at
-    super.strftime(format_time)
+    value = super
+
+    value.present? ? value.strftime(format_time) : value
   end
 
   def forced_expiriation_at=(value)

@@ -14,4 +14,4 @@ App.room = App.cable.subscriptions.create 'Admin::Currencies::ForcedChannel',
 
 $(document).on 'change', '#changeCurrency', ->
   App.room.speak { currency_id: event.target.value }
-  event.preventDefault()
+  # event.preventDefault()
