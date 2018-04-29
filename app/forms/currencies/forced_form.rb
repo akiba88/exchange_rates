@@ -16,7 +16,7 @@ class Currencies::ForcedForm < Reform::Form
   end
 
   def forced_expiriation_at=(value)
-    super Time.strptime(value, format_time)
+    super Time.strptime(value, format_time) if value.present?
   end
 
   def forced_value=(value)

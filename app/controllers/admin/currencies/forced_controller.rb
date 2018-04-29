@@ -11,7 +11,7 @@ class Admin::Currencies::ForcedController < Admin::BaseController
     else
       Rails.logger.error forced_currency_form.errors.messages
 
-      render 'admin/dashboard/index'
+      render 'admin/dashboard/index', status: 400
     end
   end
 

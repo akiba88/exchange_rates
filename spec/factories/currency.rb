@@ -6,7 +6,5 @@ FactoryGirl.define do
     name '$'
     eng_name '$'
     value 60.0
-    forced_value 1000.0
-    forced_expiriation_at 10.minutes.since
   end
 end

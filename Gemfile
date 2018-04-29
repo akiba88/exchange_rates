@@ -47,6 +47,7 @@ group :development, :test do
 
   gem 'factory_girl_rails'
 
+  gem 'rspec-html-matchers'
   gem 'rspec-rails', '~> 3.7'
   gem 'rubocop'
 
