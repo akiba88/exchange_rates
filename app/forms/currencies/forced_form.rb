@@ -6,8 +6,9 @@ class Currencies::ForcedForm < Reform::Form
 
   validate :currency_id_should_be_exists
 
-  validates :forced_value, presence: true, numericality: { greater_than: 0 }
+  validates :forced_value, presence: true, numericality: { greater_than: 0, less_than_or_equal_to: 1000 }
   validates :forced_expiriation_at, presence: true
+  validate :forced_expiriation_time_should_be_greater_than_current_time, if: -> { forced_expiriation_at.present? }
 
   def forced_expiriation_at
     value = super
@@ -27,6 +28,14 @@ protected
 
   def currency_id_should_be_exists
     errors.add(:currency_id, :invalid) unless Currency.exists?(currency_id)
+  end
+
+  def forced_expiriation_time_greater_than_current_time?
+    Time.strptime(forced_expiriation_at, format_time) > Time.current
+  end
+
+  def forced_expiriation_time_should_be_greater_than_current_time
+    errors.add(:forced_expiriation_at, :invalid) unless forced_expiriation_time_greater_than_current_time?
   end
 
   def format_time
