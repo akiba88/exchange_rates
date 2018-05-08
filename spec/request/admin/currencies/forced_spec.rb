@@ -25,7 +25,7 @@ describe 'PATCH /admin/currencies/forced', type: :request do
 
     it { expect(response).to have_http_status(302) }
 
-    it { expect(currency.display_value).to eq(options[:currency][:forced_value]) }
+    it { expect(currency.decorate.display_value).to eq(options[:currency][:forced_value]) }
   end
 
   def format_time

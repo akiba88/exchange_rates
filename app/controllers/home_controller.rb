@@ -7,6 +7,6 @@ class HomeController < ApplicationController
 protected
 
   def currencies_collection
-    @currencies_collection ||= Currency.where(parent_code: BaseConstants.available_currencies_codes)
+    @currencies_collection ||= Currency.where(parent_code: BaseConstants.available_currencies_codes).decorate
   end
 end

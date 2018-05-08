@@ -2,7 +2,7 @@ class CurrenciesRepresenter
   class << self
     def generate
       Currency.all.each_with_object([]) do |object, result|
-        result << element(object)
+        result << element(object.decorate)
 
         result
       end

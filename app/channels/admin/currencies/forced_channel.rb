@@ -11,7 +11,7 @@ protected
 
   def currency_options(id)
     CurrenciesRepresenter.element(
-      Currency.find(id)
+      Currency.find(id).try(:decorate)
     )
   end
 end

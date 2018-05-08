@@ -12,7 +12,7 @@ class SendDataToCurrenciesChannel
 protected
 
   def currency_options
-    @currency_options ||= CurrenciesRepresenter.element(currency)
+    @currency_options ||= CurrenciesRepresenter.element(currency.decorate)
   end
 
   def data
