@@ -11,9 +11,6 @@ gem 'bootstrap3-datetimepicker-rails', '~> 4.14.30'
 
 gem 'coffee-rails', '~> 4.2'
 
-gem 'devise'
-gem 'drape'
-
 gem 'http'
 
 gem 'jbuilder', '~> 2.5'

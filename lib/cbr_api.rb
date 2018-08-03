@@ -5,7 +5,7 @@ class CbrApi
     end
 
     def url_builder(path)
-      URI::HTTP.build(host: CBR_SETTINGS['host'], path: path).to_s
+      URI::HTTP.build(host: 'cbr.ru', path: path).to_s
     end
   end
 end
