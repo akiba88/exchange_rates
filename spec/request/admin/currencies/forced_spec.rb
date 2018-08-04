@@ -2,7 +2,6 @@ require 'rails_helper'
 
 describe 'PATCH /admin/currencies/forced', type: :request do
   let!(:currency) { FactoryGirl.create(:currency) }
-  let(:user) { FactoryGirl.create(:user) }
 
   let(:options) do
     {
@@ -14,18 +13,16 @@ describe 'PATCH /admin/currencies/forced', type: :request do
     }
   end
 
-  before { sign_in user }
-
   context 'valid' do
     before do
-      patch admin_currencies_forced_path(options)
+      patch admin_currencies_forced_path(options), headers: headers_with_basic_auth
 
       currency.reload
     end
 
     it { expect(response).to have_http_status(302) }
 
-    it { expect(currency.decorate.display_value).to eq(options[:currency][:forced_value]) }
+    it { expect(currency.current_value).to eq(options[:currency][:forced_value]) }
   end
 
   def format_time

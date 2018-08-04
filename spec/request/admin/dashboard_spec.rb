@@ -2,12 +2,9 @@ require 'rails_helper'
 
 describe 'GET /admin', type: :request do
   let!(:currency) { FactoryGirl.create(:currency) }
-  let(:user) { FactoryGirl.create(:user) }
-
-  before { sign_in user }
 
   context 'valid' do
-    before { get admin_root_path }
+    before { get admin_root_path, headers: headers_with_basic_auth }
 
     it { expect(response).to have_http_status(200) }
 
