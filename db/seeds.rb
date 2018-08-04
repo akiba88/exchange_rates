@@ -1,1 +1,4 @@
-Currencies::UpdateList.new.run unless Currency.any?
+unless Currency.any?
+  Currencies::UpdateList.new.run
+  Currencies::UpdateValues.new.run
+end
