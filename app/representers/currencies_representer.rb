@@ -12,7 +12,7 @@ class CurrenciesRepresenter
       {
         code: object.parent_code,
         name: object.name,
-        current_value: object.display_value,
+        current_value: object.current_value,
         forced_value: object.forced_value,
         forced_expiriation_at: object.display_forced_expiriation_at
       }

@@ -2,4 +2,4 @@ ul.list-group
 
   - collection.each do |currency|
     li.list-group-item.d-flex.justify-content-between.align-items-center id=currency.parent_code
-      = render partial: 'home/shared/element', locals: { name: currency.name, value: currency.display_value }
+      = render partial: 'home/shared/element', locals: { name: currency.name, value: currency.current_value }
