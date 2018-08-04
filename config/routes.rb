@@ -14,7 +14,7 @@ Rails.application.routes.draw do
     end
   end
 
-  # namespace :api do
-  #   resources :currencies, only: [:index, :show]
-  # end
+  namespace :api do
+    resources :currencies, only: %i[index]
+  end
 end
