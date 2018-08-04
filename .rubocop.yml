@@ -11,6 +11,9 @@ Style/ClassAndModuleChildren:
 # Style/FrozenStringLiteralComment:
 #   EnforcedStyle: never
 
+Style/EmptyMethod:
+  EnforcedStyle: expanded
+
 #################### Metrics #########################
 
 Metrics/LineLength:

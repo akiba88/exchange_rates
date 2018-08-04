@@ -5,6 +5,10 @@ class Decorator
     @source = source
   end
 
+  def as_json(*options)
+    source.as_json(*options)
+  end
+
   def to_param
     source.id.to_s
   end
@@ -15,7 +19,7 @@ class Decorator
     source.send(method)
   end
 
-  def respond_to_missing?(method)
+  def respond_to_missing?(method, _include_private = false)
     source.respond_to?(method)
   end
 end

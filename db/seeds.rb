@@ -1,11 +1,1 @@
-unless User.any?
-  User.create(
-    email: 'admin@project.com',
-    password: '111111111',
-    password_confirmation: '111111111'
-  )
-end
-
-unless Currency.any?
-  Currencies::UpdateList.new.run
-end
+Currencies::UpdateList.new.run unless Currency.any?

@@ -1,5 +1,5 @@
 class Admin::BaseController < ApplicationController
-  http_basic_authenticate_with name: "admin", password: "root"
+  http_basic_authenticate_with name: 'admin', password: 'root'
 
   helper_method :currencies_values_collection
 
